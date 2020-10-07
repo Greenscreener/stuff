@@ -1,0 +1,310 @@
+{
+  "CZ0100": {
+    "displayName": "Praha",
+	  "residents": 1324277
+  },
+  "CZ020A": {
+    "displayName": "Praha-západ",
+    "residents": 149338
+  },
+  "CZ020B": {
+    "displayName": "Příbram",
+    "residents": 115104
+  },
+  "CZ020C": {
+    "displayName": "Rakovník",
+    "residents": 55562
+  },
+  "CZ0201": {
+    "displayName": "Benešov",
+    "residents": 99414
+  },
+  "CZ0202": {
+    "displayName": "Beroun",
+    "residents": 95058
+  },
+  "CZ0203": {
+    "displayName": "Kladno",
+    "residents": 166483
+  },
+  "CZ0204": {
+    "displayName": "Kolín",
+    "residents": 102623
+  },
+  "CZ0205": {
+    "displayName": "Kutná Hora",
+    "residents": 75828
+  },
+  "CZ0206": {
+    "displayName": "Mělník",
+    "residents": 109302
+  },
+  "CZ0207": {
+    "displayName": "Mladá Boleslav",
+    "residents": 130365
+  },
+  "CZ0208": {
+    "displayName": "Nymburk",
+    "residents": 100886
+  },
+  "CZ0209": {
+    "displayName": "Praha-východ",
+    "residents": 185178
+  },
+  "CZ0311": {
+    "displayName": "České Budějovice",
+    "residents": 195903
+  },
+  "CZ0312": {
+    "displayName": "Český Krumlov",
+    "residents": 61556
+  },
+  "CZ0313": {
+    "displayName": "Jindřichův Hradec",
+    "residents": 90692
+  },
+  "CZ0314": {
+    "displayName": "Písek",
+    "residents": 71587
+  },
+  "CZ0315": {
+    "displayName": "Prachatice",
+    "residents": 50978
+  },
+  "CZ0316": {
+    "displayName": "Strakonice",
+    "residents": 70772
+  },
+  "CZ0317": {
+    "displayName": "Tábor",
+    "residents": 102595
+  },
+  "CZ0321": {
+    "displayName": "Domažlice",
+    "residents": 62062
+  },
+  "CZ0322": {
+    "displayName": "Klatovy",
+    "residents": 86405
+  },
+  "CZ0323": {
+    "displayName": "Plzeň-město",
+    "residents": 194280
+  },
+  "CZ0324": {
+    "displayName": "Plzeň-jih",
+    "residents": 63488
+  },
+  "CZ0325": {
+    "displayName": "Plzeň-sever",
+    "residents": 79979
+  },
+  "CZ0326": {
+    "displayName": "Rokycany",
+    "residents": 49349
+  },
+  "CZ0327": {
+    "displayName": "Tachov",
+    "residents": 54336
+  },
+  "CZ0411": {
+    "displayName": "Cheb",
+    "residents": 91634
+  },
+  "CZ0412": {
+    "displayName": "Karlovy Vary",
+    "residents": 114818
+  },
+  "CZ0413": {
+    "displayName": "Sokolov",
+    "residents": 88212
+  },
+  "CZ0421": {
+    "displayName": "Děčín",
+    "residents": 129542
+  },
+  "CZ0422": {
+    "displayName": "Chomutov",
+    "residents": 124946
+  },
+  "CZ0423": {
+    "displayName": "Litoměřice",
+    "residents": 119668
+  },
+  "CZ0424": {
+    "displayName": "Louny",
+    "residents": 86691
+  },
+  "CZ0425": {
+    "displayName": "Most",
+    "residents": 111708
+  },
+  "CZ0426": {
+    "displayName": "Teplice",
+    "residents": 129072
+  },
+  "CZ0427": {
+    "displayName": "Ústí nad Labem",
+    "residents": 119338
+  },
+  "CZ0511": {
+    "displayName": "Česká Lípa",
+    "residents": 103300
+  },
+  "CZ0512": {
+    "displayName": "Jablonec nad Nisou",
+    "residents": 90667
+  },
+  "CZ0513": {
+    "displayName": "Liberec",
+    "residents": 175626
+  },
+  "CZ0514": {
+    "displayName": "Semily",
+    "residents": 74097
+  },
+  "CZ0521": {
+    "displayName": "Hradec Králové",
+    "residents": 164283
+  },
+  "CZ0522": {
+    "displayName": "Jičín",
+    "residents": 80045
+  },
+  "CZ0523": {
+    "displayName": "Náchod",
+    "residents": 109958
+  },
+  "CZ0524": {
+    "displayName": "Rychnov nad Kněžnou",
+    "residents": 79383
+  },
+  "CZ0525": {
+    "displayName": "Trutnov",
+    "residents": 117978
+  },
+  "CZ0531": {
+    "displayName": "Chrudim",
+    "residents": 104613
+  },
+  "CZ0532": {
+    "displayName": "Pardubice",
+    "residents": 175441
+  },
+  "CZ0533": {
+    "displayName": "Svitavy",
+    "residents": 104333
+  },
+  "CZ0534": {
+    "displayName": "Ústí nad Orlicí",
+    "residents": 138275
+  },
+  "CZ0631": {
+    "displayName": "Havlíčkův Brod",
+    "residents": 94915
+  },
+  "CZ0632": {
+    "displayName": "Jihlava",
+    "residents": 113628
+  },
+  "CZ0633": {
+    "displayName": "Pelhřimov",
+    "residents": 72302
+  },
+  "CZ0634": {
+    "displayName": "Třebíč",
+    "residents": 110810
+  },
+  "CZ0635": {
+    "displayName": "Žďár nad Sázavou",
+    "residents": 118158
+  },
+  "CZ0641": {
+    "displayName": "Blansko",
+    "residents": 109136
+  },
+  "CZ0642": {
+    "displayName": "Brno-město",
+    "residents": 381346
+  },
+  "CZ0643": {
+    "displayName": "Brno-venkov",
+    "residents": 224642
+  },
+  "CZ0644": {
+    "displayName": "Břeclav",
+    "residents": 116291
+  },
+  "CZ0645": {
+    "displayName": "Hodonín",
+    "residents": 153943
+  },
+  "CZ0646": {
+    "displayName": "Vyškov",
+    "residents": 92280
+  },
+  "CZ0647": {
+    "displayName": "Znojmo",
+    "residents": 114351
+  },
+  "CZ0711": {
+    "displayName": "Jeseník",
+    "residents": 37968
+  },
+  "CZ0712": {
+    "displayName": "Olomouc",
+    "residents": 235472
+  },
+  "CZ0713": {
+    "displayName": "Prostějov",
+    "residents": 108646
+  },
+  "CZ0714": {
+    "displayName": "Přerov",
+    "residents": 129512
+  },
+  "CZ0715": {
+    "displayName": "Šumperk",
+    "residents": 120417
+  },
+  "CZ0721": {
+    "displayName": "Kroměříž",
+    "residents": 105343
+  },
+  "CZ0722": {
+    "displayName": "Uherské Hradiště",
+    "residents": 142226
+  },
+  "CZ0723": {
+    "displayName": "Vsetín",
+    "residents": 143334
+  },
+  "CZ0724": {
+    "displayName": "Zlín",
+    "residents": 191652
+  },
+  "CZ0801": {
+    "displayName": "Bruntál",
+    "residents": 91597
+  },
+  "CZ0802": {
+    "displayName": "Frýdek-Místek",
+    "residents": 214660
+  },
+  "CZ0803": {
+    "displayName": "Karviná",
+    "residents": 246324
+  },
+  "CZ0804": {
+    "displayName": "Nový Jičín",
+    "residents": 151577
+  },
+  "CZ0805": {
+    "displayName": "Opava",
+    "residents": 176236
+  },
+  "CZ0806": {
+    "displayName": "Ostrava-město",
+    "residents": 320145
+  }
+}

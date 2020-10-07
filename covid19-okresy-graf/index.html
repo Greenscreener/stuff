@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<title>
+		Vývoj počtu aktuálně nemocných na jednoho obyvatele v jednotlivých okresech ČR.
+	</title>
+	<meta property="og:title" content="Vývoj počtu aktuálně nemocných na jednoho obyvatele v jednotlivých okresech ČR.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://stuff.grsc.cz/covid19-okresy-graf/screen.png">
+	<meta property="og:image:alt" content="Screenshot aplikace">
+	<meta property="og:url" content="https://stuff.grsc.cz/covid19-okresy-graf/">
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+	<style>
+		html {
+			font-family: "Open Sans";
+		}
+		.twitter-share-button {
+			background-color: #039be5;
+			color: white;
+			padding: 0 5px;
+			border-radius: 3px;
+			text-decoration: none;
+			display: inline-block;
+		}
+		.twitter-share-button:hover {
+			background-color: #006597;
+		}
+		.twitter-share-button span {
+			font-size: 16px;
+			padding: 5px;
+		}
+		.twitter-share-button img {
+			padding: 5px;
+			vertical-align: middle
+		}
+	</style>
+</head>
+<body>
+<h1>Vývoj počtu aktuálně nemocných na jednoho obyvatele v jednotlivých okresech ČR.</h1>
+<p>Made by <a href="https://grsc.cz"><img style="vertical-align: middle;" width="25" src="https://grsc.cz/images/GSLOGO.svg" alt=""></a>.</p>
+<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Graf%20v%C3%BDvoje%20po%C4%8Dtu%20aktu%C3%A1ln%C4%9B%20nemocn%C3%BDch%20na%20jednoho%20obyvatele%20v%20jednotliv%C3%BDch%20okresech%20%C4%8CR%3A%20https%3A%2F%2Fstuff.grsc.cz%2Fcovid19-okresy-graf%2F">
+	<img src="./twitter.svg" width="16" alt=""><span>Tweet</span>
+</a>
+<p>Zdroj (počty nakažených): <a href="https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.json">https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.json</a></p>
+<p>Zdroj (počty obyvatel, ID krajů): <a href="https://www.czso.cz/csu/czso/pocet-obyvatel-v-obcich-k-112019">https://www.czso.cz/csu/czso/pocet-obyvatel-v-obcich-k-112019</a></p>
+<div>
+	<button onclick="changeAllHidden(true)">Skrýt vše</button><button onclick="changeAllHidden(false)">Zobrazit vše</button>
+<canvas id="myChart" style="position: relative; height: 100vh; width: 100vw;"></canvas>
+</div>
+<script>
+	function changeAllHidden(hidden) {
+		for (let i = 0; i < myChart.data.datasets.length; i++) {
+			myChart.getDatasetMeta(i).hidden = hidden
+		}
+		myChart.update()
+	}
+	let myChart;
+	fetch("./okresy.json").then(response => response.json()).then(oData => {
+		fetch("https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.json").then(response => response.json()).then(json => {
+			const okresy = json.data.map(e => e.okres_lau_kod).sort().filter(function (el, i, a) {
+				return i === a.indexOf(el)
+			});
+			const dates = json.data.map(e => e.datum).sort().filter(function (el, i, a) {
+				return i === a.indexOf(el)
+			});
+			const datasets = okresy.map((e,i) => {
+				const hue = i/77*255
+				return {
+					label: oData[e].displayName,
+					data: json.data.filter(e1 => e1.okres_lau_kod === e).map(e1 => (e1.kumulativni_pocet_nakazenych - e1.kumulativni_pocet_vylecenych)/oData[e].residents),
+					backgroundColor: "rgba(0,0,0,0)",
+					hoverBackgroundColor: "rgba(0,0,0,0)",
+					borderWidth: 2,
+					pointRadius: 1,
+					pointBorderRadius: 1,
+					pointBackgroundColor: "hsla(" + hue + ",100%,50%,.1)",
+					pointBorderColor: "hsla(" + hue + ",100%,50%,.2)",
+					borderColor: "hsla(" + hue + ",100%,50%,.1)",
+					pointHoverBackgroundColor: "hsla(" + hue + ",100%,50%,1)",
+					pointHoverBorderColor: "hsla(" + hue + ",100%,50%,1)",
+					hoverBorderColor: "hsla(" + hue + ",100%,50%,1)",
+					pointHoverRadius: 1,
+					pointHoverBorderRadius: 0,
+					hoverBorderWidth: 2,
+				}
+			})
+
+			let ctx = document.getElementById('myChart').getContext('2d');
+			myChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: dates,
+					datasets: datasets
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: window.innerWidth > window.innerHeight
+					},
+					hover: {
+						mode: "dataset"
+					}
+				}
+			});
+		});
+	});
+	window.addEventListener("resize", () => {
+		myChart.options.legend.display = window.innerWidth > window.innerHeight;
+		myChart.update();
+	});
+
+</script>
+</body>
+</html>

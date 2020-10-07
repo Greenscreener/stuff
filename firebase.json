@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": ".",
+	"site": "testing-gs",
+    "ignore": [
+	  ".git/**",
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+	"redirects": [
+		{
+			"source": "/",
+			"destination":"https://grsc.cz",
+			"type":"301"	
+		}
+	]
+  }
+}
