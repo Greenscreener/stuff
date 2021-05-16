@@ -6,7 +6,8 @@
 	  ".git/**",
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+	    "**/bulma/**"
     ],
 	"redirects": [
 		{

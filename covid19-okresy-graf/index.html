@@ -61,16 +61,17 @@
 	fetch("./okresy.json").then(response => response.json()).then(oData => {
 		fetch("https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.json").then(response => response.json()).then(json => {
 			const okresy = json.data.map(e => e.okres_lau_kod).sort().filter(function (el, i, a) {
-				return i === a.indexOf(el)
+				return i === a.indexOf(el) && el !== null
 			});
 			const dates = json.data.map(e => e.datum).sort().filter(function (el, i, a) {
 				return i === a.indexOf(el)
 			});
+			console.log(Math.min(...json.data.map(e => e.kumulativni_pocet_nakazenych - (e.kumulativni_pocet_vylecenych + e.kumulativni_pocet_umrti))))
 			const datasets = okresy.map((e,i) => {
 				const hue = i/77*255
 				return {
-					label: oData[e].displayName,
-					data: json.data.filter(e1 => e1.okres_lau_kod === e).map(e1 => (e1.kumulativni_pocet_nakazenych - e1.kumulativni_pocet_vylecenych)/oData[e].residents),
+					label: oData[e].displayName || e,
+					data: json.data.filter(e1 => e1.okres_lau_kod === e).map(e1 => (e1.kumulativni_pocet_nakazenych - (e1.kumulativni_pocet_vylecenych + e1.kumulativni_pocet_umrti))/oData[e].residents*100000),
 					backgroundColor: "rgba(0,0,0,0)",
 					hoverBackgroundColor: "rgba(0,0,0,0)",
 					borderWidth: 2,
